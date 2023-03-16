@@ -17,7 +17,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in items" :key="item.id">
+              <tr v-for="item in items" :key="item.id" @click="hinoSelecionado(item.id)">
                 <td>{{ item.id }}</td>
                 <td>{{ item.titulo }}</td>
               </tr>
@@ -49,7 +49,7 @@ export default Vue.extend({
   },
   methods: {
     hinoSelecionado(id: number) {
-      console.log(id);
+      this.$router.push({ path: `hino/${id}`});
     },
   },
 });
