@@ -2,6 +2,7 @@
     <v-app-bar
       app 
       elevate-on-scroll
+      
       color="#009688"
       scroll-target="#scrolling-techniques-7"
     >
