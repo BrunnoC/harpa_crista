@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import HinoView from '@/views/HinoView.vue'
 
 Vue.use(VueRouter)
 
@@ -10,11 +9,6 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'home',
     component: HomeView
-  },
-  {
-    path: '/hino/:id',
-    name: 'hino',
-    component: HinoView
   },
   {
     path: '/about',

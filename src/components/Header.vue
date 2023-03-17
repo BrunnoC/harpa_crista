@@ -2,9 +2,10 @@
     <v-app-bar
       app 
       elevate-on-scroll
-      
-      color="#009688"
-      scroll-target="#scrolling-techniques-7"
+      prominent
+      color="teal lighten-3"
+      dark
+      src="@/assets/imagem.jpg"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
