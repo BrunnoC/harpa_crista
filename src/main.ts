@@ -4,6 +4,8 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure
 import router from './router'
 import vuetify from './plugins/vuetify'
 import Vuetify from 'vuetify'
+import { Plugins } from '@capacitor/core'
+const { SplashScreen } = Plugins
 
 
 Vue.config.productionTip = false
@@ -15,5 +17,8 @@ Vue.use(Vuetify, {
 new Vue({
   router,
   vuetify,
-  render: h => h(App)
+  render: h => h(App),
+  mounted() {
+      SplashScreen.hide()
+    }
 }).$mount('#app')

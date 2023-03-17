@@ -6,13 +6,14 @@
         <v-row>
           <v-col>
             <v-text-field
+              solo
               v-model="buscar"
               label="Buscar"
               color="#009688"
             ></v-text-field>
           </v-col>
         </v-row>
-        <v-simple-table height="50vh">
+        <v-simple-table fixed-header height="60vh">
           <template v-slot:default>
             <thead>
               <tr>
@@ -56,21 +57,19 @@
             :style="{ fontSize: tamanhoFonte + 'em' }"
             v-html="hino?.conteudo"
           ></p>
-          <v-bottom-navigation
-            absolute
-            hide-on-scroll
-            horizontal
-            scroll-target="#scroll-threshold-example"
-            scroll-threshold="500"
-          >
-            <v-btn @click="atualizarTamanhoFonte(1)">
-              <v-icon>mdi-magnify-plus-outline</v-icon>
-            </v-btn>
-            <v-btn @click="atualizarTamanhoFonte(-1)">
-              <v-icon>mdi-magnify-minus-outline</v-icon>
-            </v-btn>
-          </v-bottom-navigation>
         </v-card-text>
+        <v-footer app fixed padless :elevation="4">
+          <v-card flat tile width="100%" class="text-center">
+            <v-card-text>
+              <v-btn icon class="mx-4" @click="atualizarTamanhoFonte(1)">
+                <v-icon size="24px">mdi-magnify-plus-outline</v-icon>
+              </v-btn>
+              <v-btn icon class="mx-4" @click="atualizarTamanhoFonte(-1)">
+                <v-icon size="24px">mdi-magnify-minus-outline</v-icon>
+              </v-btn>
+            </v-card-text>
+          </v-card>
+        </v-footer>
       </v-card>
     </v-dialog>
   </div>
@@ -89,6 +88,7 @@ export default Vue.extend({
       buscar: "",
       abrirModal: false,
       tamanhoFonte: 1,
+      fab: false,
     };
   },
   watch: {
@@ -103,13 +103,10 @@ export default Vue.extend({
   },
   methods: {
     atualizarTamanhoFonte(incremento: number) {
-      if(incremento == -1){
-        if (this.tamanhoFonte > 1)
-          this.tamanhoFonte += incremento;
-      }
-      else if(incremento == 1){
-        if(this.tamanhoFonte < 5)
-          this.tamanhoFonte += incremento;
+      if (incremento == -1) {
+        if (this.tamanhoFonte > 1) this.tamanhoFonte += incremento;
+      } else if (incremento == 1) {
+        if (this.tamanhoFonte < 5) this.tamanhoFonte += incremento;
       }
     },
     hinoSelecionado(id: number) {

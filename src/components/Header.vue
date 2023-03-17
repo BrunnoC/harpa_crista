@@ -7,7 +7,6 @@
       dark
       src="@/assets/imagem.jpg"
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
       <v-toolbar-title>Harpa Cristã</v-toolbar-title>
     </v-app-bar>

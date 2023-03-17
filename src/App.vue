@@ -1,5 +1,10 @@
 <template>
   <v-app overflow-hidden>
+    <v-system-bar
+      height="30"
+      color="#009688"
+      lights-out
+    ></v-system-bar>
     <hcHeader></hcHeader>
     <v-main>
       <router-view/>
