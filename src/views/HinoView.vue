@@ -40,8 +40,10 @@ export default Vue.extend({
         }
     },
     mounted(){
-        this.hino = this.items.find((x) => x.id == this.id)
-
+        var hino = this.items.find((x) => x.id.toString() == this.id)
+        if (hino){
+          this.hino = hino
+        }
     },
     methods: {
         atualizarTamanhoFonte(incremento: number) {
@@ -54,3 +56,9 @@ export default Vue.extend({
     }
 })
 </script>
+
+<style scoped>
+.hino {
+  line-height: 1;
+}
+</style>
