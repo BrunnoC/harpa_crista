@@ -1,0 +1,7 @@
+{
+  "name": "harpa_crista",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

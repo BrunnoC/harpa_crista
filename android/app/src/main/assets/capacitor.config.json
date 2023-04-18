@@ -1,1 +1,6 @@
-{"appId":"org.vue.myApp","appName":"harpaCrista","bundledWebRuntime":false,"webDir":"D:\\harpaCrista\\dist\\bundled"}
+{
+	"appId": "org.vue.myApp",
+	"appName": "harpaCrista",
+	"bundledWebRuntime": false,
+	"webDir": "D:\\harpaCrista\\dist\\bundled"
+}
